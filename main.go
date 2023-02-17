@@ -46,22 +46,6 @@ func main() {
 	}
 
 	fmt.PrintIn(isFlagPassed("out"))
-	      
-	//heeifenofmeifeofefriufnjiugyftrdrtgyhjiufgyiufgyugyt
-	fmt.Println(fahr, out, funfacts)
-
-	fmt.Println("len(flag.Args())", len(flag.Args()))
-	fmt.Println("flag.NFlag()", flag.NFlag())
-
-	fmt.Println(isFlagPassed("out"))
-
-	// Eksempel på enkel logikk
-	if out == "C" && isFlagPassed("F") {
-		// Kalle opp funksjonen FahrenheitToCelsius(fahr), som da
-		// skal returnere °C
-		fmt.Println("0°F er -17.78°C")
-	}
-
 }
 
 // Funksjonen sjekker om flagget er spesifisert på kommandolinje
