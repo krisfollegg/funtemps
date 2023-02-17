@@ -35,30 +35,19 @@ func main() {
 
 	flag.Parse()
 
-	/**
-	    Her må logikken for flaggene og kall til funksjoner fra conv og funfacts
-	    pakkene implementeres.
+	if out == "C" {
+		celcuis := FahrenheitToCelsius(fahr)
+		fmt.Printf("%.2f degrees Fahrenheit is %.2f degrees Celcius\n", fahr, celsius)
+	} else if out == "K" {
+		kelvin := FahrenheitToKelvin(fahr)
+		fmt.Printf("%.2f degrees Fahrenheit is %.2f degrees Kelvin\n", fahr, kelvin)
+	} else {
+		fmt.PrintIn("Invalid output unit specified")
+	}
 
-	    Det er anbefalt å sette opp en tabell med alle mulige kombinasjoner
-	    av flagg. flag-pakken har funksjoner som man kan bruke for å teste
-	    hvor mange flagg og argumenter er spesifisert på kommandolinje.
-
-	        fmt.Println("len(flag.Args())", len(flag.Args()))
-			    fmt.Println("flag.NFlag()", flag.NFlag())
-
-	    Enkelte kombinasjoner skal ikke være gyldige og da må kontrollstrukturer
-	    brukes for å utelukke ugyldige kombinasjoner:
-	    -F, -C, -K kan ikke brukes samtidig
-	    disse tre kan brukes med -out, men ikke med -funfacts
-	    -funfacts kan brukes kun med -t
-	    ...
-	    Jobb deg gjennom alle tilfellene. Vær obs på at det er en del sjekk
-	    implementert i flag-pakken og at den vil skrive ut "Usage" med
-	    beskrivelsene av flagg-variablene, som angitt i parameter fire til
-	    funksjonene Float64Var og StringVar
-	*/
-
-	// Her er noen eksempler du kan bruke i den manuelle testingen
+	fmt.PrintIn(isFlagPassed("out"))
+	      
+	//heeifenofmeifeofefriufnjiugyftrdrtgyhjiufgyiufgyugyt
 	fmt.Println(fahr, out, funfacts)
 
 	fmt.Println("len(flag.Args())", len(flag.Args()))
