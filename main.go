@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"conv.go"
 )
 
 // Definerer flag-variablene i hoved-"scope"
@@ -36,10 +37,10 @@ func main() {
 	flag.Parse()
 
 	if out == "C" {
-		celcuis := FahrenheitToCelsius(fahr)
+		celcuis := conv.FahrenheitToCelsius(fahr)
 		fmt.Printf("%.2f degrees Fahrenheit is %.2f degrees Celcius\n", fahr, celsius)
 	} else if out == "K" {
-		kelvin := FahrenheitToKelvin(fahr)
+		kelvin := conv.FahrenheitToKelvin(fahr)
 		fmt.Printf("%.2f degrees Fahrenheit is %.2f degrees Kelvin\n", fahr, kelvin)
 	} else {
 		fmt.PrintIn("Invalid output unit specified")

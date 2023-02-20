@@ -1,3 +1,3 @@
-module github.com/krisfollegg/funtemps
+module conv_test.go
 
 go 1.19
