@@ -1,5 +1,6 @@
 package conv
 
+//Konverteringer
 func FahrenheitToCelsius(value float64) float64 {
 	return (value - 32.0) * (5.0/9.0)
 }
