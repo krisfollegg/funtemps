@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"conv_test.go"
 )
 
 // Definisjon for flag-variablene i hoved-"scope"
