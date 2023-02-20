@@ -1,3 +1,3 @@
-module github.com/krisfollegg/funtemps/conv
+module github.com/krisfollegg/funtemps
 
 go 1.19
