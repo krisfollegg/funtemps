@@ -5,7 +5,7 @@ func FahrenheitToCelsius(value float64) float64 {
 	return (value - 32.0) * (5.0/9.0)
 }
 
-func CelciusToFahrenheit(value float64) float64 {
+func CelsiusToFahrenheit(value float64) float64 {
   return (value * 9 / 5) + 32
 }
 

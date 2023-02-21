@@ -1,32 +1,65 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"github.com/krisfollegg/funtemps/conv"
 )
 
 func main() {
-	f := 134.0
-	c := conv.FahrenheitToCelsius(f)
-	fmt.Printf("%v degrees Fahrenheit is %v degrees Celsius\n", f, c)
+	// Define the input flags
+	f := flag.Float64("F", 0.0, "Temperature in degrees Fahrenheit")
+	c := flag.Float64("C", 0.0, "Temperature in degrees Celsius")
+	k := flag.Float64("K", 0.0, "Temperature in degrees Kelvin")
+	output := flag.String("out", "C", "Output unit: C (Celsius), F (Fahrenheit), K (Kelvin)")
 
-	c = 56.7
-	f = conv.CelciusToFahrenheit(c)
-	fmt.Printf("%v degrees Celsius is %v degrees Fahrenheit\n", c, f)
+	// Parse the command-line arguments
+	flag.Parse()
 
-	k := 9392.0
-	f = conv.KelvinToFahrenheit(k)
-	fmt.Printf("%v degrees Kelvin is %v degrees Fahrenheit\n", k, f)
+	// Perform the desired conversion based on the input parameters
+	switch {
+	case *f != 0.0:
+		if *output == "C" {
+			celsius := conv.FahrenheitToCelsius(*f)
+			fmt.Printf("%g°F is %g°C\n", *f, celsius)
 
-	f = 134.0
-	k = conv.FahrenheitToKelvin(f)
-	fmt.Printf("%v degrees Fahrenheit is %v degrees Kelvin\n", f, k)
+		} else if *output == "K" {
+			kelvin := conv.FahrenheitToKelvin(*f)
+			fmt.Printf("%g°F is %gK\n", *f, kelvin)
 
-	c = 56.7
-	k = conv.CelciusToKelvin(c)
-	fmt.Printf("%v degrees Celsius is %v degrees Kelvin\n", c, k)
+		} else {
+			fmt.Printf("Invalid output unit: %s\n", *output)
+		}
 
-	k = 329.82
-	c = conv.KelvinToCelcius(k)
-	fmt.Printf("%v degrees Kelvin is %v degrees Celsius\n", k, c)
+	case *c != 0.0:
+		if *output == "F" {
+			fahrenheit := conv.CelsiusToFahrenheit(*c)
+			fmt.Printf("%g°C is %g°F\n", *c, fahrenheit)
+
+		} else if *output == "K" {
+			kelvin := conv.CelciusToKelvin(*c)
+			fmt.Printf("%g°C is %gK\n", *c, kelvin)
+
+		} else {
+			fmt.Printf("Invalid output unit: %s\n", *output)
+		}
+
+	case *k != 0.0:
+		if *output == "C" {
+			celsius := conv.KelvinToCelcius(*k)
+			fmt.Printf("%gK is %g°C\n", *k, celsius)
+
+		} else if *output == "F" {
+			fahrenheit := conv.KelvinToFahrenheit(*k)
+			fmt.Printf("%gK is %g°F\n", *k, fahrenheit)
+
+		} else {
+			fmt.Printf("Invalid output unit: %s\n", *output)
+		}
+		
+	default:
+		fmt.Println("Please provide a valid input temperature")
+	}
 }
+
+
