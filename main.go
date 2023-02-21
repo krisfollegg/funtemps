@@ -7,16 +7,16 @@ import (
 )
 
 func main() {
-	// Define the input flags
+	// Definert input flag
 	f := flag.Float64("F", 0.0, "Temperature in degrees Fahrenheit")
 	c := flag.Float64("C", 0.0, "Temperature in degrees Celsius")
 	k := flag.Float64("K", 0.0, "Temperature in degrees Kelvin")
 	output := flag.String("out", "C", "Output unit: C (Celsius), F (Fahrenheit), K (Kelvin)")
 
-	// Parse the command-line arguments
+	
 	flag.Parse()
 
-	// Perform the desired conversion based on the input parameters
+	// Konverteringer
 	switch {
 	case *f != 0.0:
 		if *output == "C" {
@@ -56,7 +56,7 @@ func main() {
 		} else {
 			fmt.Printf("Invalid output unit: %s\n", *output)
 		}
-		
+
 	default:
 		fmt.Println("Please provide a valid input temperature")
 	}
