@@ -21,11 +21,11 @@ func main() {
 	case *f != 0.0:
 		if *output == "C" {
 			celsius := conv.FahrenheitToCelsius(*f)
-			fmt.Printf("%g°F is %g°C\n", *f, celsius)
+			fmt.Printf("%g°F er %g°C\n", *f, celsius)
 
 		} else if *output == "K" {
 			kelvin := conv.FahrenheitToKelvin(*f)
-			fmt.Printf("%g°F is %gK\n", *f, kelvin)
+			fmt.Printf("%g°F er %gK\n", *f, kelvin)
 
 		} else {
 			fmt.Printf("Invalid output unit: %s\n", *output)
@@ -34,11 +34,11 @@ func main() {
 	case *c != 0.0:
 		if *output == "F" {
 			fahrenheit := conv.CelsiusToFahrenheit(*c)
-			fmt.Printf("%g°C is %g°F\n", *c, fahrenheit)
+			fmt.Printf("%g°C er %g°F\n", *c, fahrenheit)
 
 		} else if *output == "K" {
 			kelvin := conv.CelciusToKelvin(*c)
-			fmt.Printf("%g°C is %gK\n", *c, kelvin)
+			fmt.Printf("%g°C er %gK\n", *c, kelvin)
 
 		} else {
 			fmt.Printf("Invalid output unit: %s\n", *output)
@@ -47,11 +47,11 @@ func main() {
 	case *k != 0.0:
 		if *output == "C" {
 			celsius := conv.KelvinToCelcius(*k)
-			fmt.Printf("%gK is %g°C\n", *k, celsius)
+			fmt.Printf("%gK er %g°C\n", *k, celsius)
 
 		} else if *output == "F" {
 			fahrenheit := conv.KelvinToFahrenheit(*k)
-			fmt.Printf("%gK is %g°F\n", *k, fahrenheit)
+			fmt.Printf("%gK er %g°F\n", *k, fahrenheit)
 
 		} else {
 			fmt.Printf("Invalid output unit: %s\n", *output)
